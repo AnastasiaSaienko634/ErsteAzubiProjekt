@@ -1,208 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&display=swap');
-body{
-    margin: auto 0;
-    background-color: rgb(13, 0, 59);
-    /* background-image: ; */
-    display: flex;
-    justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&display=swap");
+body {
+  margin: auto 0;
+  background-color: rgb(13, 0, 59);
+  /* background-image: ; */
+  display: flex;
+  justify-content: center;
 }
 
-.content{
-    width: 75vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.content {
+  max-width: 950px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-footer{
-    height: 5vh;
-    width: 100%;
-    font-family: 'Mogra';
-    font-size: 18px;
-    color: #546ba0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer {
+  height: 5vh;
+  width: 100%;
+  font-family: "Mogra";
+  font-size: 18px;
+  color: #546ba0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-header{
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-header h1{
-    background: linear-gradient(90deg, #f9a8d4, #7aa2ff, #c084fc, #f9a8d4);
-    background-clip: text;
-    background-size: 200% 100%;
-    color: transparent;
-    font-size: 48px;
-    font-family: 'Mogra';
-    animation: gradientMove 3s alternate infinite;
+header {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes gradientMove{
-    0%{
-        background-position: 0% center;
-    }
-    100%{
-        background-position: 200% center;
-    }
+header h1 {
+  background: linear-gradient(90deg, #f9a8d4, #7aa2ff, #c084fc, #f9a8d4);
+  background-clip: text;
+  background-size: 200% 100%;
+  color: transparent;
+  font-size: 48px;
+  font-family: "Mogra";
+  animation: gradientMove 3s alternate infinite;
 }
 
-header p{
-    position: relative;
-    bottom: 30px;
-    font-family: 'Mogra';
-    font-size: 18px;
-    color: #546ba0;
-}
-.chat-window{
-    width: 100%;
-    height: 75%;
-    background-color: rgba(18, 39, 80, 0.642);
-    border: 2px solid rgb(91, 123, 187);
-    border-radius: 30px;
-}
-.pages{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: flex-end;
-    border-bottom: 2px solid rgb(48, 72, 119);
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
-.pages button{
-    width: 20%;
-    height: 80%;
-    margin-left: 2%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background-color: rgb(72, 98, 150);
-    border: 2px solid rgb(91, 123, 187);
-    color: rgb(96, 133, 207);
-    font-family: 'Glory';
-    font-weight: 600;
-    font-size: 18px;
-    transition: 200ms;
-    cursor: pointer;
+header p {
+  position: relative;
+  bottom: 30px;
+  font-family: "Mogra";
+  font-size: 18px;
+  color: #546ba0;
 }
-.pages .active{
-    height: 95%;
-    background: linear-gradient(90deg, #f9a8d4, #7aa2ff);
-    color: white;
-    font-size: 24px;
-    border: 2px solid white;
+.chat-window {
+  width: 100%;
+  height: 75%;
+  background-color: rgba(18, 39, 80, 0.642);
+  border: 2px solid rgb(91, 123, 187);
+  border-radius: 30px;
 }
-.pages .settings{
-    width: 5%;
-    margin-left: 5%;
-}
-.pages button:hover{
-    height: 95%;
-    color: white;
-    font-size: 24px;
-    transition: 200ms;
-}
-.ki-name{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.ki-status{
-    width: 40%;
-    height: 70%;
+.pages {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 2px solid rgb(48, 72, 119);
 }
 
-.ki-status p{
-    font-family: 'Mogra';
-    font-size: 18px;
-    color: white;
+.pages button {
+  width: 20%;
+  height: 80%;
+  margin-left: 2%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgb(72, 98, 150);
+  border: 2px solid rgb(91, 123, 187);
+  color: rgb(96, 133, 207);
+  font-family: "Glory";
+  font-weight: 600;
+  font-size: 18px;
+  transition: 200ms;
+  cursor: pointer;
 }
-.ki-status p span{
-    font-family: 'Glory';
-    font-size: 16px;
-    font-weight: 800;
-    color: #546ba0;
+.pages .active {
+  height: 95%;
+  background: linear-gradient(90deg, #f9a8d4, #7aa2ff);
+  color: white;
+  font-size: 24px;
+  border: 2px solid white;
 }
-
-.ki-logo{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #ffb87a, #f9f6a8, #ffb87a);
-    border-radius: 30px;
-    background-size: 200% 100%;
-    animation: gradientMove 3s alternate infinite;
-    margin-left: 2%;
+.pages .settings {
+  width: 5%;
+  margin-left: 5%;
 }
-.message-field{
-    width: 100%;
-    height: 55%;
-    display: flex;
-    justify-content: center;
+.pages button:hover {
+  height: 95%;
+  color: white;
+  font-size: 24px;
+  transition: 200ms;
 }
-
-.message-field-content{
-    width: 95%;
-    height: 100%;
-    background-color: rgba(14, 30, 63, 0.642);
-    border: 2px solid rgb(91, 123, 187);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    font-family: 'Glory';
-    overflow-y: scroll;
+.ki-name {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-
-.message-input-field{
-    width: 100%;
-    height: 8%;
-    background-color: white;
-    margin-top: 1%;
-}
-.ki-answer{
-    margin-left: 2%;
-    width: 40%;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-    padding-bottom: 4%;
-}
-.time-stamp{
-    height: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    color: #546ba0;
-    font-weight: 400;
-}
-.user-question{
-    width: 40%;
-    background-color: #546ba0;
-    color: white;
-    font-weight: 600;
-    font-size: 18px;
-    border-radius: 20px;
-}
-.user-question p{
-    padding-left: 3%;
+.ki-status {
+  width: 40%;
+  height: 70%;
 }
 
-.user-question-row{
-    margin-top: 4%;
-    width: 100%;
-    height: 280px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+.ki-status p {
+  font-family: "Mogra";
+  font-size: 18px;
+  color: white;
+}
+.ki-status p span {
+  font-family: "Glory";
+  font-size: 16px;
+  font-weight: 800;
+  color: #546ba0;
+}
+
+.ki-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ffb87a, #f9f6a8, #ffb87a);
+  border-radius: 30px;
+  background-size: 200% 100%;
+  animation: gradientMove 3s alternate infinite;
+  margin-left: 2%;
+}
+.message-field {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+.message-field-content {
+  width: 95%;
+  height: 100%;
+  background-color: rgba(14, 30, 63, 0.642);
+  border: 2px solid rgb(91, 123, 187);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  font-family: "Glory";
+  overflow-y: scroll;
+}
+
+.message-input-field {
+  width: 100%;
+  height: 8%;
+  background-color: white;
+  margin-top: 1%;
+}
+.ki-answer {
+  margin-left: 2%;
+  width: 40%;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding-bottom: 4%;
+}
+.time-stamp {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: #546ba0;
+  font-weight: 400;
+}
+.user-question {
+  width: 40%;
+  background-color: #546ba0;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.user-question p {
+  padding-left: 3%;
+}
+
+.user-question-row {
+  margin-top: 4%;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
@@ -214,7 +215,6 @@ header p{
   border-radius: 10px;
 }
 
-
 ::-webkit-scrollbar-thumb {
   background: #546ba0;
   border-radius: 10px;
@@ -225,18 +225,72 @@ header p{
 ::-webkit-scrollbar-thumb:hover {
   background: #7b9ce9;
 }
-.ki-thinking p{
-    background: linear-gradient(90deg, #ffffff, #575757, #ffffff, #575757, #ffffff);
-    background-size: 135% 100%;
-    animation: gradientMove 1s alternate infinite;
-    background-clip: text;
-    color: transparent;
-    font-size: 18px;
-    margin-left: 2%;
+.ki-thinking p {
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #575757,
+    #ffffff,
+    #575757,
+    #ffffff
+  );
+  background-size: 135% 100%;
+  animation: gradientMove 1s alternate infinite;
+  background-clip: text;
+  color: transparent;
+  font-size: 18px;
+  margin-left: 2%;
 }
-.ki-thinking{
-    margin-top: 8%;
-    height: 18px;
-    width: 100%;
-    padding-bottom: 2%;
+.ki-thinking {
+  margin-top: 8%;
+  height: 18px;
+  width: 100%;
+  padding-bottom: 2%;
+}
+
+/* Message Input */
+.message-input-field {
+  background-color: #0e1e3f;
+  max-width: 910px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  border: 1px solid #7b9ce9;
+  border-radius: 20px;
+  outline: none;
+}
+
+.message-input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 100%;
+  color: white;
+  padding-left: 12px;
+  background-color: #0e1e3f;
+  border: 1px solid #7b9ce9;
+  border: none;
+
+  outline: none;
+}
+
+/* Button Senden */
+.senden-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: #7b9ce9;
+  border: none;
+  border-radius: 10px;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.senden-button:hover {
+  background-color: #658be4;
+  cursor: pointer;
 }
