@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>✏️ Azubihilfe</h1>
+            <p>Dein KI-Lernassistent für Programmierung</p>
+        </header>
+        <div class="chat-window">
+            <div class="pages">
+                <button class="nav-btn active" data-page="lehrer">👨‍🏫 Lehrer</button>
+                <button class="nav-btn" data-page="aufgaben">💻 Aufgaben</button>
+                <button class="nav-btn" data-page="code-helfer">🔎 Code-Helfer</button>
+                <button class="nav-btn" data-page="bibliotek">📚 Bibliotek</button>
+                <button class="settings">⚙️</button>
+            </div>
+            <div class="chat">
+                <div class="ki-name">
+                    <div class="ki-logo">
+                        <p id="current-logo">👨‍🏫</p>
+                    </div>
+                    <div class="ki-status">
+                        <p>Lehrer-Assistent <span>- Bereit</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-field">
+                <div class="message-field-content" id="dynamic-content"></div>
+            </div>
+
+            <!-- ------------input + button------------ -->
+            <div class="message-input-field">
+                <p>INPUT</p>
+            </div>
+        </div>
+        <footer>
+            <p>Azubihilfe v1 - Powered by Mistral AI via Make.com</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
