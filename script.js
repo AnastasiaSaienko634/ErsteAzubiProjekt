@@ -42,6 +42,13 @@ const contentContainer = document.getElementById('dynamic-content');
 const statusText = document.querySelector('.ki-status p');
 const logoElement = document.getElementById('current-logo');
 
+const modal = document.getElementById('settings-modal');
+const settingsBtn = document.querySelector('.settings'); 
+const closeBtn = document.querySelector('.close-btn');
+
+
+// switching between pages -----------------------------
+
 function updatePage(pageId) {
     const data = pagesData[pageId];
     if (!data) return;
