@@ -3,15 +3,7 @@ const pagesData = {
         title: "Lehrer-Assistent",
         icon: "👨‍🏫",
         content: `
-        <div class="ki-answer"><p>👋 Hallo! Ich bin dein KI-Lehrer, betrieben von Mistral AI. <br><br> Ich kann dir helfen mit: <br><br>•	Programmierkonzepten & Theorie <br>•	Mathe & Logik für Programmierer <br>•	Lernstrategien & Erklärungen <br><br>Ich antworte auf Deutsch und erkläre alles mit lebendigen Metaphern. 🎨</p>
-          <div class="time-stamp">
-            <p>14:26</p>
-          </div>
-        </div>
-        <div class="user-question-row">
-          <div class="user-question"><p>Hallo! Ich lerne gerade Programmierung und habe einige Fragen. <br><br>Kannst du mir die Grundlagen von JavaScript einfach erklären? <br>  Was ist der Unterschied zwischen Variablen und Konstanten? <br> Wie funktionieren Funktionen und wann benutzt man sie? <br>Ich habe auch Probleme mit Schleifen – kannst du Beispiele geben? <br> Was bedeutet „asynchroner Code“ und warum ist er wichtig? <br>Wie kann ich meine Fehler im Code besser finden? <br>Hast du Tipps, wie ich effizient Programmieren lernen kann? <br> Welche Projekte sind gut für Anfänger geeignet? <br>Vielen Dank für deine Hilfe!</p></div>
-        </div>
-        <div class="ki-thinking"><p>Lass mich kurz überlegen...</p></div>
+        <div class="ki-answer"><p>👋 Hallo! Ich bin dein KI-Lehrer, betrieben von Mistral AI. <br><br> Ich kann dir helfen mit: <br><br>•	Programmierkonzepten & Theorie <br>•	Mathe & Logik für Programmierer <br>•	Lernstrategien & Erklärungen <br><br>Ich antworte auf Deutsch und erkläre alles mit lebendigen Metaphern. 🎨</p></div>
         `
     },
     'aufgaben': {
@@ -83,3 +75,60 @@ buttons.forEach(button => {
 
 
 updatePage('lehrer');
+
+// AI ----------------------------------------------------------------
+
+const sendBtn = document.querySelector('.senden-button');
+const inputField = document.querySelector('.message-input');
+const chatField = document.getElementById('dynamic-content');
+
+async function askAI() {
+    const text = inputField.value.trim();
+    
+
+    if (!text) return;
+
+
+    inputField.value = '';
+    chatField.innerHTML += `
+        <div class="user-question-row">
+            <div class="user-question"><p>${text}</p></div>
+        </div>
+    `;
+    
+
+    const thinking = document.createElement('div');
+    thinking.className = 'ki-thinking';
+    thinking.innerHTML = '<p>Lass mich kurz überlegen...</p>';
+    chatField.appendChild(thinking);
+    chatField.scrollTop = chatField.scrollHeight;
+
+    try {
+        // Отправка на Make.com
+        const response = await fetch('https://hook.eu1.make.com/kpm5emxyzl6hpq4bv1vx6xkq2eib6g7t', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text }) 
+        });
+
+        if (!response.ok) throw new Error('Ошибка сети');
+
+        const aiAnswer = await response.text();
+
+        thinking.remove();
+        chatField.innerHTML += `
+            <div class="ki-answer"><p>${aiAnswer}</p></div>
+        `;
+        
+    } catch (error) {
+        thinking.innerHTML = '<p>Ups! Da gab es einen Fehler...</p>';
+        console.error(error);
+    }
+    
+    chatField.scrollTop = chatField.scrollHeight;
+}
+
+sendBtn.addEventListener('click', askAI);
+inputField.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') askAI();
+});
