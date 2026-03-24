@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&display=swap");
+/* Body */
 body {
   margin: auto 0;
   background-image: url(./images/background.jpg);
@@ -7,7 +8,18 @@ body {
   background-size: cover;
 }
 
-.content {
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Content Container */
+.content-container {
   max-width: 950px;
   width: 100%;
   height: 100vh;
@@ -15,33 +27,42 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-footer {
-  height: 5vh;
-  width: 100%;
-  font-family: "Mogra";
-  font-size: 18px;
-  color: #546ba0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header {
-  width: 100%;
-  height: 12vh;
+
+/* Header Continer  */
+.header-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-header h1 {
+/* Header Title */
+.header-title {
+  display: flex;
   background: linear-gradient(90deg, #f9a8d4, #7aa2ff, #c084fc, #f9a8d4);
   background-clip: text;
   background-size: 200% 100%;
   color: transparent;
-  font-size: 48px;
+  font-size: 40px;
   font-family: "Mogra";
   animation: gradientMove 3s alternate infinite;
+}
+
+/* Haeder Description */
+.header-description {
+  font-family: "Mogra";
+  font-size: 18px;
+  color: #546ba0;
+}
+
+/* Footer */
+.footer-container {
+  font-family: "Mogra";
+  font-size: 16px;
+  color: #546ba0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes gradientMove {
@@ -53,32 +74,29 @@ header h1 {
   }
 }
 
-header p {
-  position: relative;
-  bottom: 30px;
-  font-family: "Mogra";
-  font-size: 18px;
-  color: #546ba0;
-}
+/*  Chat Window Container */
 .chat-window {
   width: 100%;
-  height: 70%;
+  height: 80vh;
   background-color: rgba(32, 18, 80, 0.642);
   border: 2px solid rgb(91, 93, 187);
   border-radius: 30px;
 }
-.pages {
+
+/* Pages Switching */
+.pages-container {
+  margin-top: 10px;
   width: 100%;
-  height: 10vh;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   border-bottom: 2px solid rgb(48, 72, 119);
 }
 
-.pages button {
-  width: 23%;
-  height: 80%;
+/* Pages Item */
+.pages-container button {
+  padding: 10px 20px 10px 20px;
+  width: 24%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: rgb(72, 78, 150);
@@ -90,50 +108,55 @@ header p {
   transition: 200ms;
   cursor: pointer;
 }
-.pages .active {
+
+/* Pages Item | Hover | Active */
+.pages-container .active {
   height: 95%;
   background: linear-gradient(90deg, #f9a8d4, #7aa2ff);
   color: white;
-  font-size: 24px;
-  border: 2px solid white;
+  font-size: 22px;
 }
 /* .pages .settings {
   width: 5%;
   margin-left: 5%;
 } */
-.pages button:hover {
+.pages-container button:hover {
   height: 95%;
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   transition: 200ms;
 }
-.ki-name {
-  width: 100%;
-  height: 100px;
+
+/* KI | AI Container */
+.ki-container {
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-.ki-status {
-  width: 40%;
-  height: 70%;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 10px 10px 10px;
 }
 
+/* KI | AI Name | Status */
+
+/* KI | Name */
 .ki-status p {
   font-family: "Mogra";
   font-size: 18px;
   color: white;
 }
+
+/* KI | Status */
 .ki-status p span {
   font-family: "Glory";
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 500;
   color: #546ba0;
 }
 
+/* KI | Logo */
 .ki-logo {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,16 +166,19 @@ header p {
   animation: gradientMove 3s alternate infinite;
   margin-left: 2%;
 }
+
+/* Message Field */
 .message-field {
   width: 100%;
-  height: 55%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+/* Message Field Content */
 .message-field-content {
   width: 95%;
-  height: 100%;
+  height: 48vh;
   background-color: rgba(14, 30, 63, 0.642);
   border: 2px solid rgb(91, 93, 187);
   border-top-left-radius: 30px;
@@ -161,20 +187,17 @@ header p {
   overflow-y: scroll;
 }
 
-.message-input-field {
-  width: 100%;
-  height: 8%;
-  background-color: white;
-  margin-top: 1%;
-}
+/* KI | Answer */
 .ki-answer {
-  margin-left: 2%;
-  width: 40%;
+  padding-left: 50px;
+  padding-top: 20px;
   color: white;
   font-weight: 600;
   font-size: 18px;
   padding-bottom: 4%;
 }
+
+/* Time Stamp */
 .time-stamp {
   height: 30px;
   width: 100%;
@@ -184,20 +207,27 @@ header p {
   color: #546ba0;
   font-weight: 400;
 }
+
+/* User Question */
 .user-question {
-  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
   background-color: #546ba0;
   color: white;
+  max-width: 300px;
+  width: 100%;
+  padding: 10px 12px 12px 10px;
   font-weight: 600;
-  font-size: 18px;
-  border-radius: 20px;
-}
-.user-question p {
-  padding-left: 3%;
+  font-size: 16px;
+  border-radius: 17px;
+  margin-right: 10px;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .user-question-row {
-  margin-top: 4%;
   width: 100%;
   min-height: 50px;
   display: flex;
@@ -206,6 +236,7 @@ header p {
   align-items: center;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -225,6 +256,8 @@ header p {
 ::-webkit-scrollbar-thumb:hover {
   background: #7b9ce9;
 }
+
+/* KI | Thinkig Message */
 .ki-thinking p {
   background: linear-gradient(
     90deg,
@@ -241,6 +274,7 @@ header p {
   font-size: 18px;
   margin-left: 2%;
 }
+
 .ki-thinking {
   margin-top: 8%;
   height: 18px;
@@ -259,12 +293,14 @@ header p {
   align-items: center;
   border: 1px solid #7b9ce9;
   border-radius: 20px;
+  margin-top: 10px;
   outline: none;
+  margin-bottom: 20px;
 }
 
 .message-input {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 20px;
   width: 100%;
   color: white;
@@ -272,7 +308,7 @@ header p {
   background-color: #0e1e3f;
   border: 1px solid #7b9ce9;
   border: none;
-  font-family: 'Glory';
+  font-family: "Glory";
   font-size: 14px;
 
   outline: none;
@@ -283,12 +319,12 @@ header p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
-  width: 35px;
-  height: 35px;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
   background-color: #7b9ce9;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
