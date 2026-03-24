@@ -20,7 +20,7 @@ Das Projekt ist über Vercel deployed und direkt im Browser nutzbar.
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
 - [AI](https://mistral.ai/) 
-- [Atomatisierung](https://www.make.com/en) 
+- [Automatisierung](https://www.make.com/en) 
 - [Deployment](https://vercel.com/) 
 
 ---
