@@ -292,7 +292,9 @@ p {
 
 /* KI | Answer */
 .ki-answer {
-  padding-left: 50px;
+  padding-left: 40px;
+  max-width: 550px;
+  width: 100%;
   padding-top: 20px;
   color: var(--text-main);
   font-weight: 600;
@@ -371,10 +373,10 @@ p {
 }
 
 .ki-thinking {
-  margin-top: 8%;
+  margin-top: 10px;
   height: 18px;
   width: 100%;
-  padding-bottom: 2%;
+  padding-bottom: 20px;
 }
 
 /* Message Input */
