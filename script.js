@@ -35,10 +35,6 @@ const contentContainer = document.getElementById("dynamic-content");
 const statusText = document.querySelector(".ki-status p");
 const logoElement = document.getElementById("current-logo");
 
-const modal = document.getElementById("settings-modal");
-const settingsBtn = document.querySelector(".settings");
-const closeBtn = document.querySelector(".close-btn");
-
 // Switching pages
 
 function updatePage(pageId) {
@@ -113,8 +109,7 @@ async function askAI() {
     chatField.innerHTML += `
             <div class="ki-answer"><p>${aiAnswer}</p></div>
         `;
-    saveChatHistory()
-
+    saveChatHistory();
   } catch (error) {
     thinking.innerHTML = "<p>Ups! Da gab es einen Fehler...</p>";
     console.error(error);
@@ -134,34 +129,34 @@ const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
 
 function updateIcons(activeTheme) {
-    themeIcons.forEach(img => img.style.display = "none");
-    if (activeTheme === "whitemode") {
-        themeIcons[2].style.display = "block"; 
-    } else if (activeTheme === "darkmode") {
-        themeIcons[1].style.display = "block"; 
-    } else {
-        themeIcons[0].style.display = "block"; 
-    }
+  themeIcons.forEach((img) => (img.style.display = "none"));
+  if (activeTheme === "whitemode") {
+    themeIcons[2].style.display = "block";
+  } else if (activeTheme === "darkmode") {
+    themeIcons[1].style.display = "block";
+  } else {
+    themeIcons[0].style.display = "block";
+  }
 }
 
 const enableWhite = () => {
-    document.body.classList.add("whitemode");
-    document.body.classList.remove("darkmode");
-    localStorage.setItem("theme", "white");
-    updateIcons("whitemode");
+  document.body.classList.add("whitemode");
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("theme", "white");
+  updateIcons("whitemode");
 };
 
 const enableDark = () => {
-    document.body.classList.add("darkmode");
-    document.body.classList.remove("whitemode");
-    localStorage.setItem("theme", "dark");
-    updateIcons("darkmode");
+  document.body.classList.add("darkmode");
+  document.body.classList.remove("whitemode");
+  localStorage.setItem("theme", "dark");
+  updateIcons("darkmode");
 };
 
 const disableAll = () => {
-    document.body.classList.remove("whitemode", "darkmode");
-    localStorage.setItem("theme", "cosmos");
-    updateIcons("default");
+  document.body.classList.remove("whitemode", "darkmode");
+  localStorage.setItem("theme", "cosmos");
+  updateIcons("default");
 };
 
 let savedTheme = localStorage.getItem("theme");
@@ -170,13 +165,13 @@ else if (savedTheme === "dark") enableDark();
 else updateIcons("default");
 
 themeSwitch.addEventListener("click", () => {
-    savedTheme = localStorage.getItem("theme");
+  savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme !== "white" && savedTheme !== "dark") {
-        enableWhite();
-    } else if (savedTheme === "white") {
-        enableDark();
-    } else {
-        disableAll();
-    }
+  if (savedTheme !== "white" && savedTheme !== "dark") {
+    enableWhite();
+  } else if (savedTheme === "white") {
+    enableDark();
+  } else {
+    disableAll();
+  }
 });
