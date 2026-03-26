@@ -460,6 +460,8 @@ p {
   background-color: var(--btn-send-hover);
   cursor: pointer;
 }
+
+/* Theme Switcher */
 #theme-switch {
   height: 50px;
   width: 50px;
@@ -470,10 +472,10 @@ p {
   justify-content: center;
   align-items: center;
   border: none;
+  cursor: pointer;
 }
 
 /* Modal Window */
-
 .modal {
   position: fixed;
   top: 0;
@@ -486,11 +488,13 @@ p {
   transition: background-color 0.3s;
 }
 
+/* Modal Active */
 .modal.activeModal {
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Modal Container */
 .modal-container {
   position: fixed;
   top: 50%;
@@ -505,4 +509,48 @@ p {
   flex-direction: column;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Modal Button */
+.close-modal-btn {
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+
+/* Icon Close Modal */
+.icon-close {
+  width: 27px;
+  height: 27px;
+}
+
+/* Icon Close | Hover */
+.icon-close:hover {
+  cursor: pointer;
+}
+
+/* Modal Title */
+.modal-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  font-family: "Glory";
+  font-size: 30px;
+  color: var(--text-main);
+}
+
+/* Thema Scwitcher Container */
+.thema-switch-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-title {
+  font-family: "Glory";
+  font-size: 20px;
+  color: var(--text-main);
 }
