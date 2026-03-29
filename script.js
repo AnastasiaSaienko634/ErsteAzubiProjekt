@@ -36,7 +36,6 @@ const statusText = document.querySelector(".ki-status p");
 const logoElement = document.getElementById("current-logo");
 
 // Switching pages
-
 function updatePage(pageId) {
   const data = pagesData[pageId];
   if (!data) return;
@@ -123,8 +122,7 @@ inputField.addEventListener("keypress", (e) => {
   if (e.key === "Enter") askAI();
 });
 
-// Themes
-
+// Themes Switch
 const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
 

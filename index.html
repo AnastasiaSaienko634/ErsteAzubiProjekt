@@ -15,6 +15,7 @@
             <p class="header-description">Dein KI-Lernassistent für Programmierung</p>
         </header>
         <div class="chat-window">
+            <!-- Pages Switcher -->
             <div class="pages-container">
                 <button class="nav-btn active" data-page="lehrer">👨‍🏫 Lehrer</button>
                 <button class="nav-btn" data-page="aufgaben">💻 Aufgaben</button>
@@ -36,7 +37,7 @@
                 <div class="message-field-content" id="dynamic-content"></div>
             </div>
 
-            <!-- ------------input + button------------ -->
+            <!-- ------------ Message Field | Input + Button ------------ -->
             <div class="message-input-field">
                 <input class="message-input" type="text"
                     placeholder="Schreib etwas... (Enter = Senden, Schift + Enter = Neue Zeile)">
@@ -47,7 +48,7 @@
             </div>
         </div>
 
-
+        <!-- Footer -->
         <footer class="footer-container">
             <p>Azubihilfe v1 - Powered by Mistral AI via Make.com</p>
 
@@ -60,6 +61,7 @@
                 <img class="icon-close" src="./images/close-modal.svg" alt="close-modal"></span>
             <h1 class="modal-title">Settings Menu</h1>
             <div class="thema-switch-container">
+                <!-- Themes Switcher -->
                 <h2 class="switch-title">Theme wechseln</h2>
                 <button id="theme-switch">
                     <img src="./images/wb_sunny_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg" alt="light-mode">
@@ -69,6 +71,7 @@
             </div>
         </div>
     </div>
+    <!-- JS -->
     <script src="script.js"></script>
     <script src="modal.js"></script>
 </body>

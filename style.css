@@ -502,7 +502,7 @@ p {
   transform: translate(-50%, -50%);
   background-color: var(--bg-nav-btn);
   width: 400px;
-  height: 500px;
+  height: 200px;
   padding: 20px;
   z-index: 1001;
   display: flex;
@@ -549,6 +549,7 @@ p {
   align-items: center;
 }
 
+/* Switch Title */
 .switch-title {
   font-family: "Glory";
   font-size: 20px;
