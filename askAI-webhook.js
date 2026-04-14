@@ -21,7 +21,6 @@ async function askAI() {
   chatField.scrollTop = chatField.scrollHeight;
 
   try {
-    // Sending in Make.com
     const response = await fetch(
       "https://hook.eu1.make.com/kpm5emxyzl6hpq4bv1vx6xkq2eib6g7t",
       {
@@ -49,7 +48,7 @@ async function askAI() {
 
   chatField.scrollTop = chatField.scrollHeight;
 
-  // Сохраняем историю текущей вкладки после каждого сообщения
+
   if (window.currentPage) {
     localStorage.setItem(
       `azubihilfe_chat_${window.currentPage}`,
