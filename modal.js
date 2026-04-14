@@ -20,3 +20,33 @@ const closeModal = () => {
 };
 
 closeModal();
+
+const deleteBtn = document.getElementById("chat-delete");
+
+// Функция очистки
+deleteBtn.addEventListener("click", () => {
+  // 1. Спрашиваем подтверждение у пользователя
+  const confirmDelete = confirm("Möchtest du den Chat-Verlauf wirklich löschen?");
+  
+  if (confirmDelete) {
+    // 2. Получаем ID текущей страницы (например, "teacher")
+    const pageId = window.currentPage;
+
+    // 3. Удаляем историю из localStorage для текущей вкладки
+    localStorage.removeItem(`azubihilfe_chat_${pageId}`);
+
+    // 4. Возвращаем стандартное приветствие из объекта pagesData (который в script.js)
+    if (typeof pagesData !== 'undefined' && pagesData[pageId]) {
+      const contentContainer = document.getElementById("dynamic-content");
+      contentContainer.innerHTML = pagesData[pageId].content;
+      
+      // Прокрутка вверх
+      contentContainer.scrollTop = 0;
+    }
+
+    // 5. Закрываем модальное окно после очистки
+    modal.classList.remove("activeModal");
+    
+    console.log(`История для ${pageId} удалена.`);
+  }
+});

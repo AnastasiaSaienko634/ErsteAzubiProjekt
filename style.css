@@ -475,6 +475,18 @@ p {
   cursor: pointer;
 }
 
+#chat-delete {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
 
 .modal {
   position: fixed;
@@ -502,7 +514,7 @@ p {
   transform: translate(-50%, -50%);
   background-color: var(--bg-nav-btn);
   width: 400px;
-  height: 200px;
+  height: 240px;
   padding: 20px;
   z-index: 1001;
   display: flex;
@@ -542,7 +554,7 @@ p {
 }
 
 
-.thema-switch-container {
+.settings-content-container {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -550,8 +562,15 @@ p {
 }
 
 
-.switch-title {
+.sett-content-title {
   font-family: "Glory";
   font-size: 20px;
+  color: var(--text-main);
+}
+
+.delete-info{
+  padding-top: 15px;
+  font-family: "Glory";
+  font-size: 15px;
   color: var(--text-main);
 }

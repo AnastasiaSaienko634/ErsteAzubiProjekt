@@ -29,43 +29,78 @@ const pagesData = {
   },
 };
 
-
 const buttons = document.querySelectorAll(".nav-btn");
 const contentContainer = document.getElementById("dynamic-content");
 const statusText = document.querySelector(".ai-status p");
 const logoElement = document.getElementById("current-logo");
 
+// Текущая активная вкладка — глобальная переменная
+window.currentPage = "";
+
+// ─── localStorage helpers ────────────────────────────────────────────────────
+
+// Сохранить HTML содержимое чата для конкретной вкладки
+function saveChatHistory(pageId) {
+  const html = contentContainer.innerHTML;
+  localStorage.setItem(`azubihilfe_chat_${pageId}`, html);
+}
+
+// Загрузить HTML содержимое чата для конкретной вкладки
+// Возвращает null если истории нет
+function loadChatHistory(pageId) {
+  return localStorage.getItem(`azubihilfe_chat_${pageId}`);
+}
+
+// ─── Page switching ───────────────────────────────────────────────────────────
 
 function updatePage(pageId) {
   const data = pagesData[pageId];
   if (!data) return;
 
+  // Сохраняем историю той вкладки, с которой уходим
+  if (window.currentPage) {
+    saveChatHistory(window.currentPage);
+  }
+
+  localStorage.setItem('last_active_page', pageId);
+
   contentContainer.style.opacity = "0";
 
   setTimeout(() => {
     logoElement.textContent = data.icon;
-
-    contentContainer.innerHTML = data.content;
-
     statusText.innerHTML = `${data.title} <span>- Bereit</span>`;
+
+    // Загружаем сохранённую историю, или показываем приветствие
+    const saved = loadChatHistory(pageId);
+    contentContainer.innerHTML = saved && saved.trim() !== "" ? saved : data.content;
 
     buttons.forEach((btn) => btn.classList.remove("active"));
     const activeBtn = document.querySelector(`[data-page="${pageId}"]`);
     if (activeBtn) activeBtn.classList.add("active");
 
     contentContainer.style.opacity = "1";
+    contentContainer.scrollTop = contentContainer.scrollHeight;
+
+    // Обновляем текущую вкладку
+    window.currentPage = pageId;
   }, 100);
 }
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const pageId = button.getAttribute("data-page");
-    updatePage(pageId);
+    if (pageId) updatePage(pageId);
   });
 });
 
-updatePage("teacher");
+// ─── On load: открыть вкладку teacher ────────────────────────────────────────
 
+window.addEventListener("load", () => {
+  const savedLastPage = localStorage.getItem('last_active_page') || "teacher";
+  updatePage(savedLastPage);
+});
+
+// ─── Theme switcher (без изменений) ──────────────────────────────────────────
 
 const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
@@ -117,4 +152,3 @@ themeSwitch.addEventListener("click", () => {
     disableAll();
   }
 });
-

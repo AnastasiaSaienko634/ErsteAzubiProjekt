@@ -39,12 +39,23 @@ async function askAI() {
     chatField.innerHTML += `
             <div class="ai-answer"><p>${aiAnswer}</p></div>
         `;
+        if (window.currentPage) {
+          localStorage.setItem(`azubihilfe_chat_${window.currentPage}`, chatField.innerHTML);
+    }
   } catch (error) {
     thinking.innerHTML = "<p>Ups! Da gab es einen Fehler...</p>";
     console.error(error);
   }
 
   chatField.scrollTop = chatField.scrollHeight;
+
+  // Сохраняем историю текущей вкладки после каждого сообщения
+  if (window.currentPage) {
+    localStorage.setItem(
+      `azubihilfe_chat_${window.currentPage}`,
+      chatField.innerHTML
+    );
+  }
 }
 
 sendBtn.addEventListener("click", askAI);
