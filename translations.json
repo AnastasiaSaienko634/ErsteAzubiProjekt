@@ -1,0 +1,106 @@
+{
+  "de": {
+    "headerTitle": "Azubihilfe",
+    "headerDesc": "Dein KI-Lernassistent für Programmierung",
+    "inputPlaceholder": "Schreib etwas... (Enter = Senden, Shift + Enter = Neue Zeile)",
+    "footer": "Azubihilfe v1 - Powered by Mistral AI via Make.com",
+
+    "teacherTitle": "👨‍🏫 Lehrer",
+    "teacherContent": "Hallo! Ich bin dein KI-Lehrer, betrieben von Mistral AI.\n\nIch kann dir helfen mit:\n• Programmierkonzepten & Theorie\n• Mathe & Logik für Programmierer\n• Lernstrategien & Erklärungen\n\nIch antworte auf Deutsch und erkläre alles mit lebendigen Metaphern.",
+
+    "tasksTitle": "💻 Aufgaben",
+    "tasksContent": "Hallo! Ich bin dein Aufgaben-Assistent.\n\nIch kann dir helfen mit:\n• Aufgaben erstellen\n• Mathe & Logik beibringen\n• Lernstrategien\n\nIch schreibe alles kurz und einfach.",
+
+    "codeTitle": "🔎 Code-Helfer",
+    "codeContent": "Hallo! Ich bin dein Code-Helfer.\n\nIch helfe dir beim Debugging.\nSag mir einfach, was ich anschauen soll.",
+
+    "libraryTitle": "📚 Bibliotek",
+    "libraryContent": "Willkommen in der Bibliothek.\nHier kannst du wichtige Begriffe speichern.",
+
+    "thinking": "Lass mich kurz überlegen...",
+    "error": "Ups! Da gab es einen Fehler...",
+
+    "assistentTeacher": "Lehrer-Assistent",
+    "assistentTasks": "Aufgaben-Assistent",
+    "assistentCode": "Code-Experte",
+    "assistentBibliothek": "Wissensdatenbank",
+
+    "status": "Bereit",
+
+    "settingsTitle": "Settings Menu",
+    "themeTitle": "Theme wechseln",
+    "languageTitle": "Sprache",
+    "chatClearTitle": "Chat leeren",
+    "chatClearInfo": "Wenn Sie auf „Chat leeren“ klicken, wird nur der aktuelle Tab geleert (zum Beispiel: Lehrer)."
+  },
+
+  "en": {
+    "headerTitle": "Azubi Help",
+    "headerDesc": "Your AI learning assistant for programming",
+    "inputPlaceholder": "Type something... (Enter = Send, Shift + Enter = New line)",
+    "footer": "Azubi Help v1 - Powered by Mistral AI via Make.com",
+
+    "teacherTitle": "👨‍🏫 Teacher",
+    "teacherContent": "Hello! I'm your AI teacher powered by Mistral AI.\n\nI can help you with:\n• Programming concepts\n• Math & logic\n• Learning strategies\n\nI explain everything clearly.",
+
+    "tasksTitle": "💻 Tasks",
+    "tasksContent": "Hello! I'm your task assistant.\n\nI can help you with:\n• Creating exercises\n• Teaching logic\n• Learning strategies\n\nI keep it simple.",
+
+    "codeTitle": "🔎 Code-Expert",
+    "codeContent": "Hello! I'm your code helper.\n\nI help with debugging.\nJust tell me what to check.",
+
+    "libraryTitle": "📚 Bibliothek",
+    "libraryContent": "Welcome to the library.\nHere you can save important concepts.",
+
+    "thinking": "Let me think...",
+    "error": "Oops! Something went wrong...",
+
+    "assistentTeacher": "Teacher Assistant",
+    "assistentTasks": "Tasks Assistant",
+    "assistentCode": "Code Expert",
+    "assistentBibliothek": "Knowledge Base",
+
+    "status": "Ready",
+
+    "settingsTitle": "Settings Menu",
+    "themeTitle": "Change Theme",
+    "languageTitle": "Language",
+    "chatClearTitle": "Clear Chat",
+    "chatClearInfo": "If you click “Clear chat”, only the current tab will be cleared (for example: Teacher)."
+  },
+
+  "ua": {
+    "headerTitle": "Допомога учню",
+    "headerDesc": "Твій AI-помічник для програмування",
+    "inputPlaceholder": "Напиши щось...",
+    "footer": "Версія 1 - Працює на Mistral AI",
+
+    "teacherTitle": "👨‍🏫 Вчитель",
+    "teacherContent": "Привіт! Я твій AI-вчитель.\n\nЯ допоможу з:\n• Програмуванням\n• Математикою\n• Навчанням",
+
+    "tasksTitle": "💻 Завдання",
+    "tasksContent": "Привіт! Я допомагаю з завданнями.\n\nЯ можу створювати вправи.",
+
+    "codeTitle": "Код помічник",
+    "codeContent": "Привіт! Я допомагаю з кодом.\n\nЯ знайду помилки.",
+
+    "libraryTitle": "📚 Бібліотека",
+    "libraryContent": "Ласкаво просимо до бібліотеки.\n\nТут можна зберігати знання.",
+
+    "thinking": "Зачекай...",
+    "error": "Сталася помилка...",
+
+    "assistentTeacher": "Асистент вчителя",
+    "assistentTasks": "Асистент завдань",
+    "assistentCode": "Експерт з коду",
+    "assistentBibliothek": "База знань",
+
+    "status": "Готовий",
+
+    "settingsTitle": "Меню налаштувань",
+    "themeTitle": "Змінити тему",
+    "languageTitle": "Мова",
+    "chatClearTitle": "Очистити чат",
+    "chatClearInfo": "Якщо ви натиснете «Очистити чат», буде очищено лише поточну вкладку (наприклад: Вчитель)."
+  }
+}

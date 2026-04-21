@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&display=swap");
 
 :root {
-  
   --header-gradient: linear-gradient(90deg, #f9a8d4, #7aa2ff, #c084fc, #f9a8d4);
   --active-tab-gradient: linear-gradient(90deg, #f9a8d4, #7aa2ff);
   --logo-gradient: linear-gradient(90deg, #dea8f9, #a07aff, #dea8f9);
@@ -14,12 +13,10 @@
     #ffffff
   );
 
-  
   --text-main: white;
   --text-muted: #546ba0;
   --text-nav: rgb(165, 165, 210);
   --text-transparent: transparent;
-
 
   --bg-chat-window: rgba(32, 18, 80, 0.642);
   --bg-nav-btn: rgb(72, 78, 150);
@@ -27,12 +24,10 @@
   --bg-user-msg: #546ba0;
   --bg-input: #0e1e3f;
 
-  
   --border-main: rgb(91, 93, 187);
   --border-nav-bottom: rgb(48, 72, 119);
   --border-accent: #7b9ce9;
 
-  
   --scrollbar-track: none;
   --btn-send: #7b9ce9;
   --btn-send-hover: #658be4;
@@ -42,7 +37,6 @@
 /* ------------------------------------------------------------- */
 
 .whitemode {
-  
   --header-gradient: linear-gradient(
     90deg,
     rgb(210, 208, 208),
@@ -61,31 +55,26 @@
     #ffffff
   );
 
-
   --text-main: black(158, 192, 255);
   --text-muted: #adadad;
   --text-nav: black;
   --text-transparent: transparent;
 
-  
   --bg-chat-window: #ededed;
   --bg-nav-btn: rgb(241, 241, 241);
   --bg-message-content: #c3c3c3;
   --bg-user-msg: #ededed;
   --bg-input: #c3c3c3;
 
-  
   --border-main: rgb(111, 110, 110);
   --border-nav-bottom: rgb(111, 110, 110);
   --border-accent: rgb(111, 110, 110);
-
 
   --scrollbar-track: none;
   --btn-send: #a3a1a1;
   --btn-send-hover: #909090;
   --thinking-gray: #575757;
 
-  
   background-image: none;
   background-color: white;
 }
@@ -93,7 +82,6 @@
 /* ------------------------------------------------------------- */
 
 .darkmode {
-  
   --header-gradient: linear-gradient(
     90deg,
     white,
@@ -112,31 +100,26 @@
     #ffffff
   );
 
-  
   --text-main: white;
   --text-muted: #7f92bf;
   --text-nav: #7f92bf;
   --text-transparent: transparent;
 
-  
   --bg-chat-window: rgb(43, 46, 65);
   --bg-nav-btn: rgb(73, 76, 98);
   --bg-message-content: rgb(34, 36, 51);
   --bg-user-msg: #7f92bf;
   --bg-input: rgb(34, 36, 51);
 
-  
   --border-main: black;
   --border-nav-bottom: black;
   --border-accent: black;
 
-  
   --scrollbar-track: none;
   --btn-send: #cdd7ef;
   --btn-send-hover: rgb(84, 115, 188);
   --thinking-gray: #575757;
 
-  
   background-image: none;
   background-color: rgb(16, 20, 42);
 }
@@ -159,7 +142,6 @@ p {
   padding: 0px;
 }
 
-
 .content-container {
   max-width: 950px;
   width: 100%;
@@ -169,14 +151,12 @@ p {
   justify-content: space-around;
 }
 
-
 .header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 
 .header-title {
   display: flex;
@@ -189,13 +169,11 @@ p {
   animation: gradientMove 3s alternate infinite;
 }
 
-
 .header-description {
   font-family: "Mogra";
   font-size: 18px;
   color: var(--text-muted);
 }
-
 
 .footer-container {
   font-family: "Mogra";
@@ -215,7 +193,6 @@ p {
   }
 }
 
-
 .chat-window {
   width: 100%;
   height: 80vh;
@@ -223,7 +200,6 @@ p {
   border: 2px solid var(--border-main);
   border-radius: 30px;
 }
-
 
 .pages-container {
   margin-top: 10px;
@@ -233,7 +209,6 @@ p {
   justify-content: space-around;
   border-bottom: 2px solid var(--border-nav-bottom);
 }
-
 
 .pages-container button {
   padding: 10px 20px 10px 20px;
@@ -250,7 +225,6 @@ p {
   cursor: pointer;
 }
 
-
 .pages-container .active {
   height: 95%;
   background: var(--active-tab-gradient);
@@ -265,14 +239,12 @@ p {
   transition: 200ms;
 }
 
-
 .ai-container {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 22px 10px 10px 10px;
 }
-
 
 .ai-status p {
   font-family: "Glory";
@@ -281,14 +253,12 @@ p {
   color: var(--text-main);
 }
 
-
 .ai-status p span {
   font-family: "Glory";
   font-size: 16px;
   font-weight: 500;
   color: var(--text-muted);
 }
-
 
 .ai-logo {
   width: 40px;
@@ -303,14 +273,12 @@ p {
   margin-left: 2%;
 }
 
-
 .message-field {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .message-field-content {
   width: 95%;
@@ -322,7 +290,6 @@ p {
   font-family: "Glory";
   overflow-y: scroll;
 }
-
 
 .ai-answer {
   padding-left: 40px;
@@ -336,7 +303,6 @@ p {
   padding-bottom: 4%;
 }
 
-
 .time-stamp {
   height: 30px;
   width: 100%;
@@ -346,7 +312,6 @@ p {
   color: var(--text-muted);
   font-weight: 400;
 }
-
 
 .user-question {
   display: flex;
@@ -373,7 +338,6 @@ p {
   align-items: center;
 }
 
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -394,7 +358,6 @@ p {
   background: var(--border-accent);
 }
 
-
 .ai-thinking p {
   background: var(--thinking-gradient);
   background-size: 135% 100%;
@@ -411,7 +374,6 @@ p {
   width: 100%;
   padding-bottom: 20px;
 }
-
 
 .message-input-field {
   background-color: var(--bg-input);
@@ -442,7 +404,6 @@ p {
   outline: none;
 }
 
-
 .send-button {
   display: flex;
   justify-content: center;
@@ -460,7 +421,6 @@ p {
   background-color: var(--btn-send-hover);
   cursor: pointer;
 }
-
 
 #theme-switch {
   height: 50px;
@@ -500,12 +460,10 @@ p {
   transition: background-color 0.3s;
 }
 
-
 .modal.activeModal {
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 .modal-container {
   position: fixed;
@@ -514,7 +472,7 @@ p {
   transform: translate(-50%, -50%);
   background-color: var(--bg-nav-btn);
   width: 400px;
-  height: 240px;
+  height: 500px;
   padding: 20px;
   z-index: 1001;
   display: flex;
@@ -523,7 +481,6 @@ p {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-
 .close-modal-btn {
   display: flex;
   justify-content: end;
@@ -531,17 +488,14 @@ p {
   padding-top: 2px;
 }
 
-
 .icon-close {
   width: 27px;
   height: 27px;
 }
 
-
 .icon-close:hover {
   cursor: pointer;
 }
-
 
 .modal-title {
   display: flex;
@@ -553,7 +507,6 @@ p {
   color: var(--text-main);
 }
 
-
 .settings-content-container {
   display: flex;
   gap: 10px;
@@ -561,16 +514,50 @@ p {
   align-items: center;
 }
 
-
 .sett-content-title {
   font-family: "Glory";
   font-size: 20px;
   color: var(--text-main);
 }
 
-.delete-info{
+.delete-info {
   padding-top: 15px;
   font-family: "Glory";
   font-size: 15px;
+  color: var(--text-main);
+}
+
+/* Laguage Switcher */
+.language-switch-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.language-title {
+  display: flex;
+  justify-content: center;
+  font-family: "Glory";
+  font-size: 20px;
+  color: var(--text-main);
+}
+
+.language-list {
+  padding: 0px;
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.language-btn {
+  background-color: var(--text-muted);
+  border: none;
+  font-family: "Glory";
+  font-size: 18px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
   color: var(--text-main);
 }

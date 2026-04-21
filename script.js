@@ -1,77 +1,106 @@
-const pagesData = {
-  teacher: {
-    title: "Lehrer-Assistent",
-    icon: "👨‍🏫",
-    content: `
-        <div class="ai-answer"><p>Hallo! Ich bin dein KI-Lehrer, betrieben von Mistral AI. <br><br> Ich kann dir helfen mit: <br><br>•	Programmierkonzepten & Theorie <br>•	Mathe & Logik für Programmierer <br>•	Lernstrategien & Erklärungen <br><br>Ich antworte auf Deutsch und erkläre alles mit lebendigen Metaphern. </p></div>
-        `,
-  },
-  tasks: {
-    title: "Aufgaben-Assistent",
-    icon: "💻",
-    content: `
-            <div class="ai-answer"><p>Hallo! Ich bin dein Aufgaben-Assistent, betrieben von Mistral AI. <br><br> Ich kann dir helfen mit: <br><br>•	Aufgaben erstellen <br>•	Mathe & Logik beibringen <br>•	Aufgaben mit Lernstrategien & Erklärungen geben<br><br>Ich screibe alles auf Deutsch, kurz und einfach.</p></div>
-        `,
-  },
-  "code-helper": {
-    title: "Code-Experte",
-    icon: "🔎",
-    content: `
-            <div class="ai-answer"><p>Hallo! Ich bin dein Code-Helfer-Assistent, betrieben von Mistral AI. <br><br> Ich kann dir helfen mit Debugging <br> Sag mir einfach was ich anschauen soll. <br>Ich schaue alles an und sage dir deine Fehler<br><br>Ich screibe alles kurz und einfach.</p></div>
-        `,
-  },
-  library: {
-    title: "Wissensdatenbank",
-    icon: "📚",
-    content: `
-            <div class="ai-answer"><p>Willkommen in der Bibliothek...<br><br> Hier kannst du alle wichtige Begriffe speichern und anschauen!</p></div>
-        `,
-  },
-};
+// Laguage Switcher
+let translations = {};
+let currentLang = "de";
+
+fetch("translations.json")
+  .then((res) => res.json())
+  .then((data) => {
+    translations = data;
+
+    const savedLang = localStorage.getItem("lang");
+    if (savedLang) currentLang = savedLang;
+
+    applyTranslations();
+  });
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+
+  applyTranslations();
+  updatePage(window.currentPage || "teacher");
+}
+
+function getPagesData() {
+  const t = translations[currentLang];
+
+  return {
+    teacher: {
+      title: t.assistentTeacher,
+      icon: "👨‍🏫",
+      content: formatContent(t.teacherContent),
+    },
+    tasks: {
+      title: t.assistentTasks,
+      icon: "💻",
+      content: formatContent(t.tasksContent),
+    },
+    "code-helper": {
+      title: t.assistentCode,
+      icon: "🔎",
+      content: formatContent(t.codeContent),
+    },
+    library: {
+      title: t.assistentBibliothek,
+      icon: "📚",
+      content: formatContent(t.libraryContent),
+    },
+  };
+}
+
+function applyTranslations() {
+  document.querySelectorAll("[data-key]").forEach((el) => {
+    const key = el.getAttribute("data-key");
+
+    if (el.tagName === "INPUT") {
+      el.placeholder = translations[currentLang][key];
+    } else {
+      el.innerText = translations[currentLang][key];
+    }
+  });
+}
+
+function formatContent(text) {
+  return `<div class="ai-answer"><p>${text.replace(/\n/g, "<br>")}</p></div>`;
+}
 
 const buttons = document.querySelectorAll(".nav-btn");
 const contentContainer = document.getElementById("dynamic-content");
 const statusText = document.querySelector(".ai-status p");
 const logoElement = document.getElementById("current-logo");
 
-
 window.currentPage = "";
 
-
-
-
+// Save Chat History
 function saveChatHistory(pageId) {
   const html = contentContainer.innerHTML;
   localStorage.setItem(`azubihilfe_chat_${pageId}`, html);
 }
 
-
+// Load Chat History
 function loadChatHistory(pageId) {
   return localStorage.getItem(`azubihilfe_chat_${pageId}`);
 }
 
-
-
 function updatePage(pageId) {
-  const data = pagesData[pageId];
+  const data = getPagesData()[pageId];
   if (!data) return;
-
 
   if (window.currentPage) {
     saveChatHistory(window.currentPage);
   }
 
-  localStorage.setItem('last_active_page', pageId);
+  localStorage.setItem("last_active_page", pageId);
 
   contentContainer.style.opacity = "0";
 
   setTimeout(() => {
     logoElement.textContent = data.icon;
-    statusText.innerHTML = `${data.title} <span>- Bereit</span>`;
+    statusText.innerHTML = `${data.title} - ${translations[currentLang].status}`;
 
- 
     const saved = loadChatHistory(pageId);
-    contentContainer.innerHTML = saved && saved.trim() !== "" ? saved : data.content;
+    contentContainer.innerHTML =
+      saved && saved.trim() !== "" ? saved : data.content;
 
     buttons.forEach((btn) => btn.classList.remove("active"));
     const activeBtn = document.querySelector(`[data-page="${pageId}"]`);
@@ -79,7 +108,6 @@ function updatePage(pageId) {
 
     contentContainer.style.opacity = "1";
     contentContainer.scrollTop = contentContainer.scrollHeight;
-
 
     window.currentPage = pageId;
   }, 100);
@@ -92,15 +120,12 @@ buttons.forEach((button) => {
   });
 });
 
-
-
 window.addEventListener("load", () => {
-  const savedLastPage = localStorage.getItem('last_active_page') || "teacher";
+  const savedLastPage = localStorage.getItem("last_active_page") || "teacher";
   updatePage(savedLastPage);
 });
 
-
-
+// Themen Switch
 const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
 
@@ -115,6 +140,7 @@ function updateIcons(activeTheme) {
   }
 }
 
+// White
 const enableWhite = () => {
   document.body.classList.add("whitemode");
   document.body.classList.remove("darkmode");
@@ -122,6 +148,7 @@ const enableWhite = () => {
   updateIcons("whitemode");
 };
 
+// Dark
 const enableDark = () => {
   document.body.classList.add("darkmode");
   document.body.classList.remove("whitemode");

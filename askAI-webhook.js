@@ -16,7 +16,7 @@ async function askAI() {
 
   const thinking = document.createElement("div");
   thinking.className = "ai-thinking";
-  thinking.innerHTML = "<p>Lass mich kurz überlegen...</p>";
+  thinking.innerHTML = "<p data-key='thinking'></p>";
   chatField.appendChild(thinking);
   chatField.scrollTop = chatField.scrollHeight;
 
@@ -26,7 +26,11 @@ async function askAI() {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({
+          message: text,
+          language: currentLang,
+          page: window.currentPage,
+        }),
       },
     );
 
@@ -38,21 +42,23 @@ async function askAI() {
     chatField.innerHTML += `
             <div class="ai-answer"><p>${aiAnswer}</p></div>
         `;
-        if (window.currentPage) {
-          localStorage.setItem(`azubihilfe_chat_${window.currentPage}`, chatField.innerHTML);
+    if (window.currentPage) {
+      localStorage.setItem(
+        `azubihilfe_chat_${window.currentPage}`,
+        chatField.innerHTML,
+      );
     }
   } catch (error) {
-    thinking.innerHTML = "<p>Ups! Da gab es einen Fehler...</p>";
+    thinking.innerHTML = "<p data-key='error'></p>";
     console.error(error);
   }
 
   chatField.scrollTop = chatField.scrollHeight;
 
-
   if (window.currentPage) {
     localStorage.setItem(
       `azubihilfe_chat_${window.currentPage}`,
-      chatField.innerHTML
+      chatField.innerHTML,
     );
   }
 }

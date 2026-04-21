@@ -11,16 +11,17 @@
 <body class="">
     <div class="content-container">
         <header class="header-container">
-            <h1 class="header-title"> Azubihilfe</h1>
-            <p class="header-description">Dein KI-Lernassistent für Programmierung</p>
+            <h1 class="header-title" data-key="headerTitle"></h1>
+            <p class="header-description" data-key="headerDesc"></p>
         </header>
         <div class="chat-window">
             <!-- Pages Switcher -->
             <div class="pages-container">
-                <button class="nav-btn active" data-page="teacher">👨‍🏫 Lehrer</button>
-                <button class="nav-btn" data-page="tasks">💻 Aufgaben</button>
-                <button class="nav-btn" data-page="code-helper">🔎 Code-Helfer</button>
-                <button class="nav-btn" data-page="library">📚 Bibliotek</button>
+                <button class="nav-btn active" data-page="teacher" data-key="teacherTitle"></button>
+                </button>
+                <button class="nav-btn" data-page="tasks" data-key="tasksTitle"></button>
+                <button class="nav-btn" data-page="code-helper" data-key="codeTitle"></button>
+                <button class="nav-btn" data-page="library" data-key="libraryTitle"></button>
                 <button class="settings">⚙️</button>
             </div>
             <div class="chat">
@@ -29,7 +30,7 @@
                         <p id="current-logo">👨‍🏫</p>
                     </div>
                     <div class="ai-status">
-                        <p>Lehrer-Assistent <span>- Bereit</span></p>
+                        <p data-key="assistentTeacher"> <span data-key="status">- </span></p>
                     </div>
                 </div>
             </div>
@@ -39,8 +40,7 @@
 
             <!-- ------------ Message Field | Input + Button ------------ -->
             <div class="message-input-field">
-                <input class="message-input" type="text"
-                    placeholder="Schreib etwas... (Enter = Senden, Schift + Enter = Neue Zeile)">
+                <input class="message-input" type="text" data-key="inputPlaceholder">
                 <button class="send-button"><img
                         src="./images/2849794-airplane-interface-multimedia-paper-airplane-plane-send_107999.svg"
                         alt="Senden Icon">
@@ -50,7 +50,7 @@
 
         <!-- Footer -->
         <footer class="footer-container">
-            <p>Azubihilfe v1 - Powered by Mistral AI via Make.com</p>
+            <p data-key="footer"></p>
 
         </footer>
     </div>
@@ -59,24 +59,33 @@
         <div class="modal-container">
             <span class="close-modal-btn">
                 <img class="icon-close" src="./images/close-modal.svg" alt="close-modal"></span>
-            <h1 class="modal-title">Settings Menu</h1>
+            <h1 class="modal-title" data-key="settingsTitle"></h1>
             <div class="settings-content-container">
                 <!-- Themes Switcher -->
-                <h2 class="sett-content-title">Theme wechseln</h2>
+                <h2 class="sett-content-title" data-key="themeTitle"></h2>
                 <button id="theme-switch">
                     <img src="./images/wb_sunny_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg" alt="light-mode">
                     <img src="./images/planet_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg" alt="cosmos-mode">
                     <img src="./images/dark_mode_24dp_E3E3E3_FILL1_wght400_GRAD0_opsz24.svg" alt="dark-mode">
                 </button>
             </div>
+
+            <div class="language-switch-container">
+                <h1 class="language-title" data-key="languageTitle"></h1>
+                <ul class="language-list">
+                    <li class="language-item"><button onclick="setLanguage('de')" class="language-btn">DE</button></li>
+                    <li class="language-item"><button onclick="setLanguage('en')" class="language-btn">EN</button></li>
+                    <li class="language-item"><button onclick="setLanguage('ua')" class="language-btn">UA</button></li>
+                </ul>
+            </div>
             <div class="settings-content-container">
-                <h2 class="sett-content-title">Chat leeren</h2>
+                <h2 class="sett-content-title" data-key="chatClearTitle"></h2>
                 <button id="chat-delete">
                     <img src="./images/delete_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="delete chat history">
                 </button>
             </div>
             <div class="delete-info">
-                <p>Wenn Sie auf „Chat leeren“ klicken, wird nur der aktuelle Tab geleert (zum Beispiel: Lehrer).</p>
+                <p data-key="chatClearInfo"></p>
             </div>
         </div>
     </div>
