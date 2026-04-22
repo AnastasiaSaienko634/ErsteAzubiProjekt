@@ -19,6 +19,7 @@ async function askAI() {
   thinking.innerHTML = "<p data-key='thinking'></p>";
   chatField.appendChild(thinking);
   chatField.scrollTop = chatField.scrollHeight;
+  applyTranslations();
 
   try {
     const response = await fetch(

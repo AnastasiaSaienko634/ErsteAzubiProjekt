@@ -30,8 +30,8 @@
     "settingsTitle": "Settings Menu",
     "themeTitle": "Theme wechseln",
     "languageTitle": "Sprache",
-    "chatClearTitle": "Chat leeren",
-    "chatClearInfo": "Wenn Sie auf „Chat leeren“ klicken, wird nur der aktuelle Tab geleert (zum Beispiel: Lehrer)."
+    "chatClearTitle": "Chat leeren *",
+    "chatClearInfo": "* Wenn Sie auf „Chat leeren“ klicken, wird nur der aktuelle Tab geleert (zum Beispiel: Lehrer)."
   },
 
   "en": {
@@ -65,23 +65,23 @@
     "settingsTitle": "Settings Menu",
     "themeTitle": "Change Theme",
     "languageTitle": "Language",
-    "chatClearTitle": "Clear Chat",
-    "chatClearInfo": "If you click “Clear chat”, only the current tab will be cleared (for example: Teacher)."
+    "chatClearTitle": "Clear Chat *",
+    "chatClearInfo": "* If you click “Clear chat”, only the current tab will be cleared (for example: Teacher)."
   },
 
   "ua": {
-    "headerTitle": "Допомога учню",
-    "headerDesc": "Твій AI-помічник для програмування",
+    "headerTitle": "Учнівський Помічник",
+    "headerDesc": "Твій ШІ-помічник для програмування",
     "inputPlaceholder": "Напиши щось...",
     "footer": "Версія 1 - Працює на Mistral AI",
 
     "teacherTitle": "👨‍🏫 Вчитель",
-    "teacherContent": "Привіт! Я твій AI-вчитель.\n\nЯ допоможу з:\n• Програмуванням\n• Математикою\n• Навчанням",
+    "teacherContent": "Привіт! Я твій ШІ-вчитель.\n\nЯ допоможу з:\n• Програмуванням\n• Математикою\n• Навчанням",
 
     "tasksTitle": "💻 Завдання",
     "tasksContent": "Привіт! Я допомагаю з завданнями.\n\nЯ можу створювати вправи.",
 
-    "codeTitle": "Код помічник",
+    "codeTitle": "🔎 Допомога",
     "codeContent": "Привіт! Я допомагаю з кодом.\n\nЯ знайду помилки.",
 
     "libraryTitle": "📚 Бібліотека",
@@ -100,7 +100,7 @@
     "settingsTitle": "Меню налаштувань",
     "themeTitle": "Змінити тему",
     "languageTitle": "Мова",
-    "chatClearTitle": "Очистити чат",
-    "chatClearInfo": "Якщо ви натиснете «Очистити чат», буде очищено лише поточну вкладку (наприклад: Вчитель)."
+    "chatClearTitle": "Очистити чат *",
+    "chatClearInfo": "* Якщо ви натиснете «Очистити чат», буде очищено лише поточну вкладку (наприклад: Вчитель)."
   }
 }

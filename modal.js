@@ -31,20 +31,18 @@ deleteBtn.addEventListener("click", () => {
   if (confirmDelete) {
     const pageId = window.currentPage;
 
+
     localStorage.removeItem(`azubihilfe_chat_${pageId}`);
 
+    const allPages = getPagesData(); 
     
-    if (typeof pagesData !== 'undefined' && pagesData[pageId]) {
+    if (allPages && allPages[pageId]) {
       const contentContainer = document.getElementById("dynamic-content");
-      contentContainer.innerHTML = pagesData[pageId].content;
       
-     
+      contentContainer.innerHTML = allPages[pageId].content;
       contentContainer.scrollTop = 0;
     }
 
-   
     modal.classList.remove("activeModal");
-    
-    console.log(`История для ${pageId} удалена.`);
   }
 });

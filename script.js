@@ -150,52 +150,39 @@ buttons.forEach((button) => {
 const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
 
-function updateIcons(activeTheme) {
-  themeIcons.forEach((img) => (img.style.display = "none"));
-
-  if (activeTheme === "whitemode") {
-    themeIcons[2].style.display = "block";
-  } else if (activeTheme === "darkmode") {
-    themeIcons[1].style.display = "block";
-  } else {
-    themeIcons[0].style.display = "block";
+function updateIcons(isWhite){
+  if (isWhite) {
+    themeIcons[0].style.display = 'block';
+    themeIcons[1].style.display = 'none';
+  }else{
+    themeIcons[0].style.display = 'none';
+    themeIcons[1].style.display = 'block';
   }
 }
 
 const enableWhite = () => {
   document.body.classList.add("whitemode");
-  document.body.classList.remove("darkmode");
   localStorage.setItem("theme", "white");
-  updateIcons("whitemode");
-};
-
-const enableDark = () => {
-  document.body.classList.add("darkmode");
+  updateIcons(true);
+}
+const disableWhite = () => {
   document.body.classList.remove("whitemode");
-  localStorage.setItem("theme", "dark");
-  updateIcons("darkmode");
-};
+  localStorage.setItem("theme", "dark")
+  updateIcons(false);
+}
 
-const disableAll = () => {
-  document.body.classList.remove("whitemode", "darkmode");
-  localStorage.setItem("theme", "cosmos");
-  updateIcons("default");
-};
-
-let savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "white") enableWhite();
-else if (savedTheme === "dark") enableDark();
-else updateIcons("default");
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "white") {
+  enableWhite();
+} else {
+  disableWhite();
+}
 
 themeSwitch.addEventListener("click", () => {
-  savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme !== "white" && savedTheme !== "dark") {
-    enableWhite();
-  } else if (savedTheme === "white") {
-    enableDark();
+  const isWhite = document.body.classList.contains("whitemode");
+  if (isWhite) {
+    disableWhite();
   } else {
-    disableAll();
+    enableWhite();
   }
-});
+})

@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --header-gradient: linear-gradient(90deg, #f9a8d4, #7aa2ff, #c084fc, #f9a8d4);
-  --active-tab-gradient: linear-gradient(90deg, #f9a8d4, #7aa2ff);
-  --logo-gradient: linear-gradient(90deg, #dea8f9, #a07aff, #dea8f9);
+  --header-gradient: linear-gradient(
+    90deg,
+    white,
+    rgb(210, 210, 210),
+    rgb(194, 190, 190),
+    white
+  );
+  --active-tab-gradient: linear-gradient(90deg, #7f92bf);
+  --logo-gradient: linear-gradient(90deg, #92b2fd, #709afd, #96b4f9);
   --thinking-gradient: linear-gradient(
     90deg,
     #ffffff,
@@ -14,24 +20,27 @@
   );
 
   --text-main: white;
-  --text-muted: #546ba0;
-  --text-nav: rgb(165, 165, 210);
+  --text-muted: #7f92bf;
+  --text-nav: #7f92bf;
   --text-transparent: transparent;
 
-  --bg-chat-window: rgba(32, 18, 80, 0.642);
-  --bg-nav-btn: rgb(72, 78, 150);
-  --bg-message-content: rgba(14, 30, 63, 0.642);
-  --bg-user-msg: #546ba0;
-  --bg-input: #0e1e3f;
+  --bg-chat-window: rgb(43, 46, 65);
+  --bg-nav-btn: rgb(73, 76, 98);
+  --bg-message-content: rgb(34, 36, 51);
+  --bg-user-msg: #7f92bf;
+  --bg-input: rgb(34, 36, 51);
 
-  --border-main: rgb(91, 93, 187);
-  --border-nav-bottom: rgb(48, 72, 119);
-  --border-accent: #7b9ce9;
+  --border-main: black;
+  --border-nav-bottom: black;
+  --border-accent: black;
 
   --scrollbar-track: none;
-  --btn-send: #7b9ce9;
-  --btn-send-hover: #658be4;
+  --btn-send: #cdd7ef;
+  --btn-send-hover: rgb(84, 115, 188);
   --thinking-gray: #575757;
+
+  background-image: none;
+  background-color: rgb(16, 20, 42);
 }
 
 /* ------------------------------------------------------------- */
@@ -81,52 +90,9 @@
 
 /* ------------------------------------------------------------- */
 
-.darkmode {
-  --header-gradient: linear-gradient(
-    90deg,
-    white,
-    rgb(210, 210, 210),
-    rgb(194, 190, 190),
-    white
-  );
-  --active-tab-gradient: linear-gradient(90deg, #7f92bf);
-  --logo-gradient: linear-gradient(90deg, #92b2fd, #709afd, #96b4f9);
-  --thinking-gradient: linear-gradient(
-    90deg,
-    #ffffff,
-    #575757,
-    #ffffff,
-    #575757,
-    #ffffff
-  );
-
-  --text-main: white;
-  --text-muted: #7f92bf;
-  --text-nav: #7f92bf;
-  --text-transparent: transparent;
-
-  --bg-chat-window: rgb(43, 46, 65);
-  --bg-nav-btn: rgb(73, 76, 98);
-  --bg-message-content: rgb(34, 36, 51);
-  --bg-user-msg: #7f92bf;
-  --bg-input: rgb(34, 36, 51);
-
-  --border-main: black;
-  --border-nav-bottom: black;
-  --border-accent: black;
-
-  --scrollbar-track: none;
-  --btn-send: #cdd7ef;
-  --btn-send-hover: rgb(84, 115, 188);
-  --thinking-gray: #575757;
-
-  background-image: none;
-  background-color: rgb(16, 20, 42);
-}
 
 body {
   margin: auto 0;
-  background-image: url(./images/background.jpg);
   display: flex;
   justify-content: center;
   background-size: cover;
@@ -165,18 +131,18 @@ p {
   background-size: 200% 100%;
   color: var(--text-transparent);
   font-size: 40px;
-  font-family: "Mogra";
+  font-family: "Mogra", "Overpass";
   animation: gradientMove 3s alternate infinite;
 }
 
 .header-description {
-  font-family: "Mogra";
+  font-family: "Mogra", "Overpass";
   font-size: 18px;
   color: var(--text-muted);
 }
 
 .footer-container {
-  font-family: "Mogra";
+  font-family: "Mogra", "Overpass";
   font-size: 16px;
   color: var(--text-muted);
   display: flex;
@@ -218,7 +184,7 @@ p {
   background-color: var(--bg-nav-btn);
   border: 2px solid var(--border-main);
   color: var(--text-nav);
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-weight: 600;
   font-size: 18px;
   transition: 200ms;
@@ -247,14 +213,14 @@ p {
 }
 
 .ai-status p {
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 20px;
   font-weight: 700;
   color: var(--text-main);
 }
 
 .ai-status p span {
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 16px;
   font-weight: 500;
   color: var(--text-muted);
@@ -287,7 +253,7 @@ p {
   border: 2px solid var(--border-main);
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   overflow-y: scroll;
 }
 
@@ -399,7 +365,7 @@ p {
   padding-left: 12px;
   background-color: var(--bg-input);
   border: none;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 14px;
   outline: none;
 }
@@ -502,7 +468,7 @@ p {
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 30px;
   color: var(--text-main);
 }
@@ -515,14 +481,14 @@ p {
 }
 
 .sett-content-title {
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 20px;
   color: var(--text-main);
 }
 
 .delete-info {
   padding-top: 15px;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 15px;
   color: var(--text-main);
 }
@@ -540,7 +506,7 @@ p {
 .language-title {
   display: flex;
   justify-content: center;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 20px;
   color: var(--text-main);
 }
@@ -555,7 +521,7 @@ p {
 .language-btn {
   background-color: var(--text-muted);
   border: none;
-  font-family: "Glory";
+  font-family: "Glory", "Overpass";
   font-size: 18px;
   padding: 10px 10px 10px 10px;
   border-radius: 20px;
