@@ -1,6 +1,7 @@
-// Laguage Switcher
+// Language Switcher
 let translations = {};
 let currentLang = "de";
+let languageChanged = false;
 
 fetch("translations.json")
   .then((res) => res.json())
@@ -11,18 +12,15 @@ fetch("translations.json")
     if (savedLang) currentLang = savedLang;
 
     applyTranslations();
+
+    const savedLastPage = localStorage.getItem("last_active_page") || "teacher";
+    updatePage(savedLastPage);
   });
 
-function setLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem("lang", lang);
-
-  applyTranslations();
-  updatePage(window.currentPage || "teacher");
-}
-
+// Pages
 function getPagesData() {
   const t = translations[currentLang];
+  if (!t) return {};
 
   return {
     teacher: {
@@ -49,6 +47,8 @@ function getPagesData() {
 }
 
 function applyTranslations() {
+  if (!translations[currentLang]) return;
+
   document.querySelectorAll("[data-key]").forEach((el) => {
     const key = el.getAttribute("data-key");
 
@@ -58,6 +58,21 @@ function applyTranslations() {
       el.innerText = translations[currentLang][key];
     }
   });
+}
+
+// Language Switcher
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("lang", lang);
+
+  languageChanged = true;
+
+  ["teacher", "tasks", "code-helper", "library"].forEach((page) => {
+    localStorage.removeItem(`azubihilfe_chat_${page}`);
+  });
+
+  applyTranslations();
+  updatePage(window.currentPage || "teacher");
 }
 
 function formatContent(text) {
@@ -71,19 +86,21 @@ const logoElement = document.getElementById("current-logo");
 
 window.currentPage = "";
 
-// Save Chat History
+// Save Chat
 function saveChatHistory(pageId) {
   const html = contentContainer.innerHTML;
   localStorage.setItem(`azubihilfe_chat_${pageId}`, html);
 }
 
-// Load Chat History
 function loadChatHistory(pageId) {
   return localStorage.getItem(`azubihilfe_chat_${pageId}`);
 }
 
+// Update Page
 function updatePage(pageId) {
-  const data = getPagesData()[pageId];
+  const pages = getPagesData();
+  const data = pages[pageId];
+
   if (!data) return;
 
   if (window.currentPage) {
@@ -98,11 +115,20 @@ function updatePage(pageId) {
     logoElement.textContent = data.icon;
     statusText.innerHTML = `${data.title} - ${translations[currentLang].status}`;
 
-    const saved = loadChatHistory(pageId);
-    contentContainer.innerHTML =
-      saved && saved.trim() !== "" ? saved : data.content;
+    let content;
+
+    if (languageChanged) {
+      content = data.content;
+    } else {
+      const saved = loadChatHistory(pageId);
+      content = saved && saved.trim() !== "" ? saved : data.content;
+    }
+
+    contentContainer.innerHTML = content;
+    languageChanged = false;
 
     buttons.forEach((btn) => btn.classList.remove("active"));
+
     const activeBtn = document.querySelector(`[data-page="${pageId}"]`);
     if (activeBtn) activeBtn.classList.add("active");
 
@@ -120,17 +146,13 @@ buttons.forEach((button) => {
   });
 });
 
-window.addEventListener("load", () => {
-  const savedLastPage = localStorage.getItem("last_active_page") || "teacher";
-  updatePage(savedLastPage);
-});
-
-// Themen Switch
+// Themen Switcher
 const themeSwitch = document.getElementById("theme-switch");
 const themeIcons = themeSwitch.querySelectorAll("img");
 
 function updateIcons(activeTheme) {
   themeIcons.forEach((img) => (img.style.display = "none"));
+
   if (activeTheme === "whitemode") {
     themeIcons[2].style.display = "block";
   } else if (activeTheme === "darkmode") {
@@ -140,7 +162,6 @@ function updateIcons(activeTheme) {
   }
 }
 
-// White
 const enableWhite = () => {
   document.body.classList.add("whitemode");
   document.body.classList.remove("darkmode");
@@ -148,7 +169,6 @@ const enableWhite = () => {
   updateIcons("whitemode");
 };
 
-// Dark
 const enableDark = () => {
   document.body.classList.add("darkmode");
   document.body.classList.remove("whitemode");
@@ -163,6 +183,7 @@ const disableAll = () => {
 };
 
 let savedTheme = localStorage.getItem("theme");
+
 if (savedTheme === "white") enableWhite();
 else if (savedTheme === "dark") enableDark();
 else updateIcons("default");
