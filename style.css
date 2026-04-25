@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Mogra&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --header-gradient: linear-gradient(
@@ -89,7 +89,6 @@
 }
 
 /* ------------------------------------------------------------- */
-
 
 body {
   margin: auto 0;
@@ -430,7 +429,7 @@ p {
   display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+/* Modal Container */
 .modal-container {
   position: fixed;
   top: 50%;
@@ -447,6 +446,7 @@ p {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Close Modal Burron */
 .close-modal-btn {
   display: flex;
   justify-content: end;
@@ -454,6 +454,7 @@ p {
   padding-top: 2px;
 }
 
+/* Close Icon */
 .icon-close {
   width: 27px;
   height: 27px;
@@ -463,6 +464,7 @@ p {
   cursor: pointer;
 }
 
+/* Modal title */
 .modal-title {
   display: flex;
   justify-content: center;
@@ -473,6 +475,7 @@ p {
   color: var(--text-main);
 }
 
+/* Setting Container */
 .settings-content-container {
   display: flex;
   gap: 10px;
@@ -480,6 +483,7 @@ p {
   align-items: center;
 }
 
+/* Setting Title */
 .sett-content-title {
   font-family: "Glory", "Overpass";
   font-size: 20px;
@@ -503,6 +507,7 @@ p {
   margin-right: auto;
 }
 
+/* Language Title */
 .language-title {
   display: flex;
   justify-content: center;
@@ -511,6 +516,7 @@ p {
   color: var(--text-main);
 }
 
+/* Language List */
 .language-list {
   padding: 0px;
   display: flex;
@@ -518,6 +524,7 @@ p {
   list-style-type: none;
 }
 
+/* Language Button */
 .language-btn {
   background-color: var(--text-muted);
   border: none;
